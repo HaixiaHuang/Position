@@ -1,0 +1,117 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:position</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">关于定位个人总结笔记</h1>
+<h2 id="-">四种定位</h2>
+<hr>
+<h3 id="-">静态定位</h3>
+<pre><code>Position: static;  默认值，标准流的状态。
+</code></pre><h3 id="-">绝对定位</h3>
+<pre><code>Position: absolute;
+     1. 绝对定位的元素脱标
+     2. 单独的盒子，使用绝对定位的时候，位置基于浏览器出发。
+     3. 嵌套的盒子，如果父元素没有使用绝对定位，子元素绝对定的时候，位置 基于浏览器出发。
+     4. 嵌套的盒子，如果父元素使用了绝对定位，子元素绝对定位，子元素的位 置基于父盒子位置出发。
+     5. 给行内元素使用绝对定位之后，实现了模式转换(不推荐使用，转行内块推荐是display: inline-block;)
+</code></pre><h3 id="-">相对定位</h3>
+<pre><code> Position: relative;
+    1. 盒子使用相对定位，从自身位置出发，还占据原来的位置。
+    2. 盒子使用相对定位之后，不脱标。
+    3. 嵌套的盒子，父元素相对定位，子元素绝对定位，子元素的位置基础父元素为出发。
+    4. 子绝父相，子元素绝对定位，父元素相对定位。    
+    5. 给元素使用相对定位，不能将行内元素转为行内块。
+    注意：多层嵌套的盒子，子盒子绝对定位，是以离自己最近的采用了定位的父盒子来确定位置。
+</code></pre><h3 id="-">固定定位</h3>
+<pre><code> Position: fixed;
+    1. 固定定位的位置基于浏览器出发。
+    2. 固定定位会脱标
+    3. 可以实现将行内元素转为行内块模式(不推荐使用)
+
+
+                                    xx版权所有.
+</code></pre>
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
